@@ -179,3 +179,66 @@ function displayUpcoming() {
     mainBox.appendChild(thisWeekList);
 }
 
+function displayPriority() {
+    const mainBox = document.querySelector("main");
+    mainBox.innerHTML = "";
+    const documentHeader = document.createElement("h1");
+    documentHeader.textContent = "Priority";
+    const priority = document.createElement("ul");
+    projectFolders.forEach((pf, pfIndex) => {
+        pf.projects.forEach((p, pIndex) => {
+            p.todos.forEach((td, tdIndex) => {
+               if (!td.priority) return;
+               if (td.taskComplete) return;
+                const todoBox = document.createElement("li");
+                const leftBox = document.createElement("div");
+                const rightBox = document.createElement("div");
+                const checkbox = document.createElement("input");
+                const task = document.createElement("label");
+                const date = document.createElement("p");
+                const editButton = document.createElement("img");
+                const deleteButton = document.createElement("img");
+                leftBox.classList.add("left-box");
+                rightBox.classList.add("right-box");
+                checkbox.setAttribute("type", "checkbox");
+                checkbox.setAttribute("id", `todo${tdIndex}`);
+                checkbox.setAttribute("data-pf-index", pfIndex);
+                checkbox.setAttribute("data-p-index", pIndex);
+                checkbox.setAttribute("data-td-index", tdIndex);
+                checkbox.addEventListener("change", checkTodoPriority);
+                task.setAttribute("for", `todo${tdIndex}`);
+                deleteButton.setAttribute("data-pf-index", pfIndex);
+                deleteButton.setAttribute("data-p-index", pIndex);
+                deleteButton.setAttribute("data-td-index", tdIndex);
+                deleteButton.src = deleteIcon;
+                deleteButton.addEventListener("click", removeTodoPriority);
+                editButton.setAttribute("data-pf-index", pfIndex);
+                editButton.setAttribute("data-p-index", pIndex);
+                editButton.setAttribute("data-td-index", tdIndex);
+                editButton.src = editIcon;
+                editButton.addEventListener("click", displayEditTodoModalPriority);
+                task.textContent = td.task;
+                date.textContent = td.formattedDate;
+                editButton.textContent = "/";
+                deleteButton.textContent = "X";
+                leftBox.appendChild(checkbox);
+                leftBox.appendChild(task);
+                if (td.priority) {
+                    const priority = document.createElement("img");
+                    priority.src = priorityIcon;
+                    leftBox.appendChild(priority);
+                }
+                rightBox.appendChild(date);
+                rightBox.appendChild(editButton);
+                rightBox.appendChild(deleteButton);
+                todoBox.appendChild(leftBox);
+                todoBox.appendChild(rightBox);
+                priority.appendChild(todoBox);
+            })
+        })
+    })
+    mainBox.appendChild(documentHeader);
+    mainBox.appendChild(priority);
+}
+
+export { displayToday, displayUpcoming, displayPriority };
