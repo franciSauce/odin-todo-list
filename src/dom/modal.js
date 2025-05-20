@@ -152,3 +152,14 @@ function removeTodoModal() {
     modal.classList.remove("show");
 }
 
+export {
+    displayProjectModal,
+    removeProjectModal,
+    displayTodoModal,
+    removeTodoModal,
+    displayEditTodoModal,
+    displayEditProjectModal,
+    displayEditTodoModalToday,
+    displayEditTodoModalUpcoming,
+    displayEditTodoModalPriority,
+}
