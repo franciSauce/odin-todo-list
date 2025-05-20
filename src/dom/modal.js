@@ -34,3 +34,13 @@ function displayEditProjectModal(e) {
     modal.classList.add("show");
 }
 
+function removeProjectModal() {
+    const modal = document.querySelector(".project-modal");
+    const modalButton = document.querySelector(".p-button");
+    modalButton.removeEventListener("click", addProject);
+    modalButton.removeEventListener("click", editProject);
+    modalButton.removeAttribute("data-pf-index");
+    modalButton.removeAttribute("data-p-index");
+    modal.classList.remove("show");
+}
+
