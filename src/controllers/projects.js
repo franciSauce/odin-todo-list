@@ -20,3 +20,21 @@ function addProject(e) {
     displayProject(newProj, index, projectFolders[index].projects.length - 1);
 }
 
+function editProject(e) {
+    const projectName = document.querySelector("#p-name");
+    const projectDescription = document.querySelector("#p-desc");
+    const name = projectName.value;
+    const description = projectDescription.value;
+    if (!name || !description) {
+        alert("Please fill in all fields");
+        return;
+    }
+    const pfIndex = e.target.dataset.pfIndex;
+    const pIndex = e.target.dataset.pIndex;
+    projectFolders[pfIndex].projects[pIndex].name = name;
+    projectFolders[pfIndex].projects[pIndex].description = description;
+    removeProjectModal();
+    displayFolders(projectFolders);
+    displayProject(projectFolders[pfIndex].projects[pIndex], pfIndex, pIndex);
+}
+
