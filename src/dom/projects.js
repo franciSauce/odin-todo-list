@@ -99,4 +99,60 @@ function displayProject(project,pfIndex, pIndex) {
     displayTodos(todos, todoList, pfIndex, pIndex); 
 }
 
+function displayTodos(todos, todoList, pfIndex, pIndex) {
+    const sortedTodos = sortTodosByChecked(todos);
+    sortedTodos.forEach((todo, tdIndex) => {
+        const todoBox = document.createElement("li");
+        const leftBox = document.createElement("div");
+        const rightBox = document.createElement("div");
+        const checkbox = document.createElement("input");
+        const task = document.createElement("label");
+        const date = document.createElement("p");
+        const editButton = document.createElement("img");
+        const deleteButton = document.createElement("img");
+        deleteButton.setAttribute("data-pf-index", pfIndex);
+        deleteButton.setAttribute("data-p-index", pIndex);
+        deleteButton.setAttribute("data-td-index", tdIndex);
+        deleteButton.src = deleteIcon;
+        deleteButton.addEventListener("click", removeTodo);
+        editButton.setAttribute("data-pf-index", pfIndex);
+        editButton.setAttribute("data-p-index", pIndex);
+        editButton.setAttribute("data-td-index", tdIndex);
+        editButton.src = editIcon;
+        editButton.addEventListener("click", displayEditTodoModal);
+        leftBox.classList.add("left-box");
+        rightBox.classList.add("right-box");
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.setAttribute("id", `todo${tdIndex}`);
+        checkbox.setAttribute("data-pf-index", pfIndex);
+        checkbox.setAttribute("data-p-index", pIndex);
+        checkbox.setAttribute("data-td-index", tdIndex);
+        checkbox.addEventListener("change", checkTodo);
+        task.setAttribute("for", `todo${tdIndex}`);
+        if (todo.taskComplete) {
+            checkbox.checked = true;
+        }
+        projectFolders[pfIndex].projects[pIndex].todos[tdIndex].pfIndex = pfIndex;
+        projectFolders[pfIndex].projects[pIndex].todos[tdIndex].pIndex = pIndex;
+        projectFolders[pfIndex].projects[pIndex].todos[tdIndex].tdIndex = tdIndex;
+        task.textContent = todo.task;
+        date.textContent = todo.formattedDate;
+        editButton.textContent = "/";
+        deleteButton.textContent = "X";
+        leftBox.appendChild(checkbox);
+        leftBox.appendChild(task);
+        if (todo.priority) {
+            const priority = document.createElement("img");
+            priority.src = priorityIcon;
+            leftBox.appendChild(priority);
+        }
+        rightBox.appendChild(date);
+        rightBox.appendChild(editButton);
+        rightBox.appendChild(deleteButton);
+        todoBox.appendChild(leftBox);
+        todoBox.appendChild(rightBox);
+        todoBox.classList.add("todo-box");      
+    })
+}
 
+export { displayFolders, displayProject };
