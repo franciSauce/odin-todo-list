@@ -41,3 +41,5 @@ function checkTodoToday(e) {
     projectFolders[pfIndex].projects[pIndex].todos[tdIndex].priority = false;
     displayToday();
 }
+
+export { editTodoToday, removeTodoToday, checkTodoToday };
