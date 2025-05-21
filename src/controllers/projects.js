@@ -52,3 +52,5 @@ function removeProject(e) {
     displayFolders(projectFolders);
     displayProject(projectFolders[0].projects[0], 0, 0);
 }
+
+export { addProject, editProject, selectProject, removeProject };
