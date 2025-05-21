@@ -20,6 +20,7 @@ function displayFolders(folders) {
         projectList.classList.add("project-list");
         projectList.setAttribute("data-pf-index", pfIndex);
         button.classList.add("pf-button");
+        button.setAttribute("data-pf-index", pfIndex);
         button.src = addOrangeIcon;
         button.addEventListener("click", displayProjectModal);
         div.textContent = folder.name;
@@ -45,6 +46,57 @@ function displayFolders(folders) {
             proj.addEventListener("click", selectProject);
         })
     })
+}
+
+function displayProject(project,pfIndex, pIndex) {
+    const mainBox = document.querySelector("main");
+    mainBox.innerHTML = "";
+    const divHeader = document.createElement("div");
+    const divButtons = document.createElement("div");
+    const description = document.createElement("p");
+    const todoHeaderBox = document.createElement("div");
+    const todoList = document.createElement("ul");
+    const projectHeader = document.createElement("h1");
+    const projectDelete = document.createElement("img");
+    const projectEdit = document.createElement("img");
+    const todoHeader = document.createElement("h2");
+    const addTodo = document.createElement("img");
+    addTodo.setAttribute("data-pf-index", pfIndex);
+    addTodo.setAttribute("data-p-index", pIndex);
+    addTodo.src = addWhiteIcon;
+    addTodo.addEventListener("click", displayTodoModal);
+    projectDelete.classList.add("p-delete");
+    projectDelete.setAttribute("data-pf-index", pfIndex);
+    projectDelete.setAttribute("data-p-index", pIndex);
+    projectDelete.src = deleteIcon;
+    projectDelete.addEventListener("click", removeProject);
+    projectEdit.classList.add("p-edit");
+    projectEdit.setAttribute("data-pf-index", pfIndex);
+    projectEdit.setAttribute("data-p-index", pIndex);
+    projectEdit.src = editIcon;
+    projectEdit.addEventListener("click", displayEditProjectModal);
+    divHeader.classList.add("p-header");
+    description.classList.add("p-description");
+    todoHeaderBox.classList.add("todo-header");
+    todoList.classList.add("todo-list");
+    projectHeader.textContent = project.name;
+    projectDelete.textContent = "X";
+    projectEdit.textContent = "/";
+    description.textContent = project.description;
+    todoHeader.textContent = "Todos";
+    addTodo.textContent = "+";
+    divButtons.appendChild(projectEdit);
+    divButtons.appendChild(projectDelete);
+    divHeader.appendChild(projectHeader);
+    divHeader.appendChild(divButtons);
+    todoHeaderBox.appendChild(todoHeader);
+    todoHeaderBox.appendChild(addTodo);
+    mainBox.appendChild(divHeader);
+    mainBox.appendChild(description);
+    mainBox.appendChild(todoHeaderBox);
+    mainBox.appendChild(todoList);
+    const todos = project.todos;
+    displayTodos(todos, todoList, pfIndex, pIndex); 
 }
 
 
