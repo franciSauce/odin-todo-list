@@ -42,3 +42,5 @@ function checkTodoPriority(e) {
     projectFolders[pfIndex].projects[pIndex].todos[tdIndex].priority = false;
     displayPriority();
 }
+
+export { editTodoPriority, removeTodoPriority, checkTodoPriority };
