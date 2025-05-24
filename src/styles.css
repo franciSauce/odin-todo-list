@@ -144,6 +144,21 @@ body {
     display: grid;
     grid-template: 3.125rem 1fr / 25rem 1fr;
     height: 100vh;
-    color: white;
+    color: rgb(255, 255, 255);
+}
+
+header {
+    grid-area: 1 / 1 / 2 / 3 ;
+    background-color: var(--header-color);
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding-left: 1.25rem;
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+header > img {
+    height: 3.125rem;
 }
 
