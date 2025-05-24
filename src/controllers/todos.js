@@ -76,3 +76,17 @@ function checkTodo(e) {
     }
 }
 
+function sortTodosByChecked(todos) {
+    todos.sort((a, b) => {
+        if (a.taskComplete && !b.taskComplete) {
+            return 1;
+        } else if (!a.taskComplete && b.taskComplete) {
+            return -1;
+        } else {
+            return 0;
+        }
+    })
+    return todos;
+}
+
+export { addTodo, editTodo, removeTodo, checkTodo, sortTodosByChecked };
