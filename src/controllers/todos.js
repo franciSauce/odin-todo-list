@@ -51,3 +51,28 @@ function editTodo(e) {
     displayProject(projectFolders[pfIndex].projects[pIndex], pfIndex, pIndex);
 }
 
+function removeTodo(e) {
+    const pfIndex = e.target.dataset.pfIndex;
+    const pIndex = e.target.dataset.pIndex;
+    const tdIndex = e.target.dataset.tdIndex;
+    projectFolders[pfIndex].projects[pIndex].todos.splice(tdIndex, 1);
+    displayProject(projectFolders[pfIndex].projects[pIndex], pfIndex, pIndex);
+    displayFolders(projectFolders);
+}
+
+function checkTodo(e) {
+    const pfIndex = e.target.dataset.pfIndex;
+    const pIndex = e.target.dataset.pIndex;
+    const tdIndex = e.target.dataset.tdIndex;
+    if (this.checked) {
+        projectFolders[pfIndex].projects[pIndex].todos[tdIndex].taskComplete = true;
+        projectFolders[pfIndex].projects[pIndex].todos[tdIndex].priority = false;
+        displayProject(projectFolders[pfIndex].projects[pIndex], pfIndex, pIndex);
+        displayFolders(projectFolders);
+    } else {
+        projectFolders[pfIndex].projects[pIndex].todos[tdIndex].taskComplete = false;
+        displayProject(projectFolders[pfIndex].projects[pIndex], pfIndex, pIndex);
+        displayFolders(projectFolders);
+    }
+}
+
