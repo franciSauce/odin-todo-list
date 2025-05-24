@@ -27,3 +27,27 @@ function addTodo(e) {
     displayFolders(projectFolders);
 }
 
+function editTodo(e) {
+    const taskName = document.querySelector("#task-name");
+    const dueDate = document.querySelector("#due-date");
+    const priority = document.querySelector("#priority");
+    const task = taskName.value;
+    const date = dueDate.value;
+    const editedTodo = Todo(task, date);
+    if (!task || !date) {
+        alert("Please fill in all fields");
+        return;
+    }
+    if (priority.checked) {
+        editedTodo.priority = true;
+    } else {
+        editedTodo.priority = false;
+    }
+    const pfIndex = e.target.dataset.pfIndex;
+    const pIndex = e.target.dataset.pIndex;
+    const tdIndex = e.target.dataset.tdIndex;
+    projectFolders[pfIndex].projects[pIndex].todos.splice(tdIndex, 1, editedTodo);
+    removeTodoModal();
+    displayProject(projectFolders[pfIndex].projects[pIndex], pfIndex, pIndex);
+}
+
