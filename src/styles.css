@@ -129,3 +129,21 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+/* Custom Styles */
+:root {
+    --primary-color: #101010;
+    --secondary-color: black;
+    --tertiary-color: #cc854e;
+    --header-color: #dc5f00;
+    --accent-color: #b85252;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template: 3.125rem 1fr / 25rem 1fr;
+    height: 100vh;
+    color: white;
+}
+
