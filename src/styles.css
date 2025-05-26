@@ -331,3 +331,21 @@ main > ul > li > .right-box > img:first-of-type {
     height: 1.8rem
 }
 
+main > .todo-list > li > .left-box,
+main > ul > li > .left-box {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 1.5rem;
+}
+
+main > .todo-list > li > .left-box > img,
+main > ul > li > .left-box > img {
+    height: 1.5rem;
+    width: auto;
+}
+
+main > .todo-list > li > .left-box > input:checked+label {
+    text-decoration: line-through; 
+}
+
