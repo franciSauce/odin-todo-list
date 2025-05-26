@@ -268,3 +268,43 @@ main > .p-header > div > img {
 main > .p-header > div > img:first-child {
     height: 3.5rem;
 }
+
+main > .p-description {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: 4rem;
+}
+
+main > .todo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+}
+
+main > .todo-header > h2 {
+    font-size: 2.5rem;
+}
+
+main > .todo-header > img {
+    height: 2.5rem;
+    width: auto;
+    cursor: pointer;
+}
+
+main > .todo-list > li,
+main > ul > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 0;
+    border-bottom: 2px solid var(--tertiary-color);
+}
+
+main > .todo-list > li > div,
+main > ul > li > div {
+    display: flex;
+    align-items: center;  
+}
+
