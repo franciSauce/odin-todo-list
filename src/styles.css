@@ -162,3 +162,32 @@ header > img {
     height: 3.125rem;
 }
 
+.sidebar {
+    grid-area: 2 / 1 / 3 / 2;
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar > .links {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.sidebar > .links > .filters {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.sidebar > .links > .project-folder-list > li > div {
+    font-size: 2rem;
+    color: var(--tertiary-color);
+    border-bottom: 2px solid var(--tertiary-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
