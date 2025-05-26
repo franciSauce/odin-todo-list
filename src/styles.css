@@ -416,3 +416,53 @@ input[type="checkbox"],
     text-align: center;
 }
 
+.modal > .task > input,
+.modal > input[type="text"] {
+    width: 21.875rem;
+    height: 1.875rem;
+    background-color: var(--primary-color);
+    font-size: 1.3rem;
+    border: none;
+    border-bottom: 2px solid var(--tertiary-color);
+    color: rgb(255, 255, 255);
+    font-weight: 200;
+    padding-left: 5px;
+}
+
+.modal > .task > input:focus,
+.modal > input[type="text"]:focus {
+    outline: none;
+}
+
+.modal > .props {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.modal > .props > .date,
+.modal > .props > .priority {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.modal > .props > .date > label:first-child,
+.modal > .props > .priority > label:first-child {
+    font-size: 1.3rem;
+}
+
+.modal > .props > .date {
+    margin-left: 0.625rem;
+}
+
+.modal > .props > .priority {
+    margin-right: 2.1875rem;
+}
+
+/* .modal > .buttons {
+    display: flex;
+    gap: 1.875rem;
+} */
+
