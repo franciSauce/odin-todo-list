@@ -461,8 +461,44 @@ input[type="checkbox"],
     margin-right: 2.1875rem;
 }
 
-/* .modal > .buttons {
+.modal > .buttons {
     display: flex;
     gap: 1.875rem;
-} */
+}
+
+.modal > .buttons > .ctd-button,
+.modal > .buttons > .cp-button {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 0.5rem;
+    width: 9.375rem;
+    height: 3.125rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.modal > .buttons > .ctd-button:hover,
+.modal > .buttons > .cp-button:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.modal > .buttons > .td-button,
+.modal > .buttons > .p-button {
+    background-color: var(--primary-color);
+    color: #beca5c;
+    border: 2px solid #beca5c;
+    border-radius: 0.5rem;
+    width: 9.375rem;
+    height: 3.125rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.modal > .buttons > .td-button:hover,
+.modal > .buttons > .p-button:hover {
+    background-color: #beca5c;
+    color: var(--primary-color);
+}
 
