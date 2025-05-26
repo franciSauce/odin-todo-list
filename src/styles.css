@@ -234,3 +234,37 @@ header > img {
     cursor: pointer;
 }
 
+main {
+    grid-area: 2 / 2 / 3 / 3;
+    background-color: var(--primary-color);
+    padding: 6rem;    
+}
+
+main > .p-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+main > .p-header > h1,
+main > h1 {
+    font-size: 4rem;
+    color: var(--tertiary-color);
+}
+
+main > .p-header > div {
+    display: flex;
+    align-items: center;
+    gap: 1.875rem;
+}
+
+main > .p-header > div > img {
+    height: 4rem;
+    width: auto;
+    cursor: pointer;
+}
+
+main > .p-header > div > img:first-child {
+    height: 3.5rem;
+}
