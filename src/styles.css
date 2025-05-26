@@ -502,3 +502,27 @@ input[type="checkbox"],
     color: var(--primary-color);
 }
 
+.project-modal > .modal {
+    display: flex;
+    flex-direction: column;
+    height: 31.25rem;
+    gap: 1.875rem;
+}
+
+.project-modal > .modal > textarea {
+    width: 21.875rem;
+    height: 25rem;
+    background-color: var(--primary-color);
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    border: 2px solid var(--tertiary-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    resize: none;
+    font-family: sans-serif, monospace;
+}
+
+.project-modal > .modal > textarea:focus {
+    outline: none;
+}
+
