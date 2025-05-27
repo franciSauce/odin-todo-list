@@ -1,4 +1,4 @@
-import { projectFolders } from "..";
+import { projectFolders } from "../index";
 import { addProject, editProject } from "../controllers/projects";
 import { addTodo, editTodo, editListTodo } from "../controllers/todos";
 import { format, parse } from "date-fns";
