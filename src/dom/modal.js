@@ -7,7 +7,7 @@ import { editTodoUpcoming } from "../controllers/upcoming";
 import { editTodoPriority } from "../controllers/priority";
 
 function displayProjectModal(e) {
-    const modal =document.querySelector(".project-modal");
+    const modal = document.querySelector(".project-modal");
     const modalButton = document.querySelector(".p-button");
     const projectName = document.querySelector("#p-name");
     const projectDescription = document.querySelector("#p-desc");
