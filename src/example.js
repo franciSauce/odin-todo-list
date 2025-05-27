@@ -77,6 +77,7 @@ function workProject() {
     workProject.todos.push(todo5);
     return workProject;
 }
+
 function auditing() {
     const auditing = Project("Auditing");
     const todo1 = Todo("Audit financial statements", "Review the financial statements for accuracy", tomorrowDate);
