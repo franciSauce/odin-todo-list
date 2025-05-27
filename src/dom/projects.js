@@ -1,7 +1,7 @@
 import { displayEditProjectModal, displayEditTodoModal, displayProjectModal, displayTodoModal } from "./modal";
 import { removeProject, selectProject } from "../controllers/projects";
 import { checkTodo, removeTodo } from "../controllers/todos";
-import { projectFolders } from "..";
+import { projectFolders } from "../index";
 import { sortTodosByChecked } from "../controllers/todos";
 import deleteIcon from "../icons/delete.svg";
 import editIcon from "../icons/edit.svg";
