@@ -1,12 +1,12 @@
 import { projectFolders } from "./index";
 import { Todo, Project, ProjectFolder } from "./factory-functions";
-import { displayProject } from "./dom/projects";
+import { displayFolders, displayProject } from "./dom/projects";
 import { format, addDays, subDays } from "date-fns";
 
 const currentDate = format(new Date(), "dd/MM/yyyy");
-const pastDue = format(subDays(new Date(), 1), "dd/MM/yyyy");
+const pastDue = format(subDays(new Date(), 2), "dd/MM/yyyy");
 const tomorrowDate = format(addDays(new Date(), 1), "dd/MM/yyyy");
-const thisWeekDate = format(addDays(new Date(), 7), "dd/MM/yyyy");
+const thisWeekDate = format(addDays(new Date(), 5), "dd/MM/yyyy");
 
 function setExamples() {
     const projectFolder1 = ProjectFolder("Personal");
