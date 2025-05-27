@@ -3,7 +3,7 @@ import { Todo } from "../factory-functions";
 import { removeTodoModal } from "../dom/modal";
 import { displayPriority } from "../dom/links";
 import { displayFolders } from "../dom/projects";
-import { tr } from "date-fns/locale";
+
 
 function editTodoPriority(e) {
     const taskName = document.querySelector("#task-name");
@@ -40,6 +40,7 @@ function checkTodoPriority(e) {
     const tdIndex = e.target.dataset.tdIndex;
     projectFolders[pfIndex].projects[pIndex].todos[tdIndex].taskComplete = true;
     projectFolders[pfIndex].projects[pIndex].todos[tdIndex].priority = false;
+    displayFolders(projectFolders);
     displayPriority();
 }
 
