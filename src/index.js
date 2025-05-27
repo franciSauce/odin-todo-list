@@ -1,3 +1,4 @@
+import "./styles.css";
 import { addProjectFolder } from "./controllers/project-folders";
 import { setExamples } from "./example";
 import { removeProjectModal, removeTodoModal } from "./dom/modal";
