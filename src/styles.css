@@ -345,7 +345,7 @@ main > ul > li > .left-box > img {
     width: auto;
 }
 
-main > .todo-list > li > .left-box > input:checked+label {
+main > .todo-list > li > .left-box > input:checked + label {
     text-decoration: line-through; 
 }
 
