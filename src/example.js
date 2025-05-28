@@ -31,14 +31,12 @@ function cleanHouse() {
     const todo2 = Todo("Laundry", "Do the laundry", currentDate);
     const todo3 = Todo("Dishes", "Wash the dishes", currentDate);
     const todo4 = Todo("Vacuum", "Vacuum the house", currentDate);
-    const todo5 = Todo("Dust", "Dust the furniture", currentDate);
     todo2.priority = "true";
     todo4.taskComplete = "true";
     cleanHouse.todos.push(todo1);
     cleanHouse.todos.push(todo2);
     cleanHouse.todos.push(todo3);
     cleanHouse.todos.push(todo4);
-    cleanHouse.todos.push(todo5);
     return cleanHouse;
 }
 
