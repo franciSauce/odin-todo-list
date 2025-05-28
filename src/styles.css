@@ -181,6 +181,7 @@ header > img {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    cursor: pointer;
 }
 
 .sidebar > .links > .project-folder-list > li > div {
