@@ -21,8 +21,6 @@ function setExamples() {
     projectFolder2.projects.push(project4);
     projectFolders.push(projectFolder1);
     projectFolders.push(projectFolder2);
-    displayFolders.push(projectFolder1);
-    displayFolders.push(projectFolder2);
     displayFolders(projectFolders);
     displayProject(project1, 0, 0); 
 }
