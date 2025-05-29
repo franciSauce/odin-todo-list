@@ -31,8 +31,8 @@ function cleanHouse() {
     const todo2 = Todo("Laundry", "Do the laundry", currentDate);
     const todo3 = Todo("Dishes", "Wash the dishes", currentDate);
     const todo4 = Todo("Vacuum", "Vacuum the house", currentDate);
-    todo2.priority = "true";
-    todo4.taskComplete = "true";
+    todo2.priority = true;
+    todo4.taskComplete = true;
     cleanHouse.todos.push(todo1);
     cleanHouse.todos.push(todo2);
     cleanHouse.todos.push(todo3);
@@ -47,8 +47,8 @@ function errands() {
     const todo3 = Todo("Return library books", "Return library books to the library", pastDue);
     const todo4 = Todo("Gas station", "Fill up the car with gas", tomorrowDate);
     const todo5 = Todo("Post office", "Mail a package at the post office", pastDue);
-    todo1.priority = "true";
-    todo3.taskComplete = "true";
+    todo1.priority = true;
+    todo3.taskComplete = true;
     errands.todos.push(todo1);
     errands.todos.push(todo2);
     errands.todos.push(todo3);
@@ -64,8 +64,8 @@ function workProject() {
     const todo3 = Todo("Client call", "Call the client for feedback", thisWeekDate);
     const todo4 = Todo("Update presentation", "Update the presentation slides", tomorrowDate);
     const todo5 = Todo("Send email", "Send an email to the team", currentDate);
-    todo2.priority = "true";
-    todo4.taskComplete = "true";
+    todo2.priority = true;
+    todo4.taskComplete = true;
     workProject.todos.push(todo1);
     workProject.todos.push(todo2);
     workProject.todos.push(todo3);
@@ -81,8 +81,8 @@ function auditing() {
     const todo3 = Todo("Client meeting", "Meet with the client to discuss findings", thisWeekDate);
     const todo4 = Todo("Follow up on discrepancies", "Follow up on any discrepancies found during the audit", tomorrowDate);
     const todo5 = Todo("Submit final report", "Submit the final audit report to management", currentDate);
-    todo1.priority = "true";
-    todo3.taskComplete = "true";
+    todo1.priority = true;
+    todo3.taskComplete = true;
     auditing.todos.push(todo1);
     auditing.todos.push(todo2);
     auditing.todos.push(todo3);
