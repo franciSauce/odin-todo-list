@@ -14,6 +14,10 @@ function addProject(e) {
     }
     const newProj = Project(project, description);
     const index = e.target.dataset.pfIndex;
+    if (projectFolders[index] === undefined) {
+        console.error("projectFolders[index] is undefined. Check the index or the projectFolders array.");
+        return;
+    }
     projectFolders[index].projects.push(newProj);
     removeProjectModal();
     displayFolders(projectFolders);
