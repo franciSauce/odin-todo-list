@@ -24,7 +24,7 @@ function displayToday() {
     projectFolders.forEach((pf, pfIndex) => {
         pf.projects.forEach((p, pIndex) => {
             p.todos.forEach((td, tdIndex) => {
-                const currentDate = format(new Date(), "dd/MM/yyyy");
+                const currentDate = format(new Date(), "MM/dd/yy");
                 if (td.taskComplete) return;
                 const todoBox = document.createElement("li");
                 const leftBox = document.createElement("div");
@@ -108,8 +108,8 @@ function displayUpcoming() {
     projectFolders.forEach((pf, pfIndex) => {
         pf.projects.forEach((p, pIndex) => {
             p.todos.forEach((td, tdIndex) => {
-                const tomorrowDate = format(addDays(new Date(), 1), "dd/MM/yyyy");
-                const nextWeekDate = format(addDays(new Date(), 7), "dd/MM/yyyy");
+                const tomorrowDate = format(addDays(new Date(), 1), "MM/dd/yy");
+                const nextWeekDate = format(addDays(new Date(), 7), "MM/dd/yy");
                 if (td.taskComplete) return;
                 const todoBox = document.createElement("li");
                 const leftBox = document.createElement("div");
