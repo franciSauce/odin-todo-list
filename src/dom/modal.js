@@ -48,15 +48,18 @@ function displayTodoModal(e) {
     const modal = document.querySelector(".todo-modal");
     const modalButton = document.querySelector(".td-button");
     const taskName = document.querySelector("#task-name");
+    const taskDesc = document.querySelector("#task-desc");
     const dueDate = document.querySelector("#due-date");
     const priority = document.querySelector("#priority");
     const pfIndex = e.target.dataset.pfIndex;
     const pIndex = e.target.dataset.pIndex;
     taskName.value = "";
+    taskDesc.value = "";
     dueDate.value = "";
     priority.checked = false;
     modalButton.setAttribute("data-pf-index", pfIndex);
     modalButton.setAttribute("data-p-index", pIndex);
+    modalButton.removeEventListener("click", addTodo);
     modalButton.addEventListener("click", addTodo);
     modal.classList.add("show");
 }
@@ -65,12 +68,14 @@ function displayEditTodoModal(e) {
     const modal = document.querySelector(".todo-modal");
     const modalButton = document.querySelector(".td-button");
     const taskName = document.querySelector("#task-name");
+    const taskDesc = document.querySelector("#task-desc");
     const dueDate = document.querySelector("#due-date");
     const priority = document.querySelector("#priority");
     const pfIndex = e.target.dataset.pfIndex;
     const pIndex = e.target.dataset.pIndex;
     const tdIndex = e.target.dataset.tdIndex;
     taskName.value = projectFolders[pfIndex].projects[pIndex].todos[tdIndex].task;
+    taskDesc.value = todo.description;
     dueDate.value = format(parse(projectFolders[pfIndex].projects[pIndex].todos[tdIndex].formattedDate, "MM/dd/yy", new Date()), "yyyy-MM-dd");
     if (projectFolders[pfIndex].projects[pIndex].todos[tdIndex].priority) priority.checked = true;
     else priority.checked = false;
