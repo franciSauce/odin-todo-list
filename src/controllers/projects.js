@@ -65,7 +65,15 @@ function removeProject(e) {
     const pIndex = e.target.dataset.pIndex;
     projectFolders[pfIndex].projects.splice(pIndex, 1);
     displayFolders(projectFolders);
-    displayProject(projectFolders[0].projects[0], 0, 0);
+
+     // Safety check
+    if (projectFolders[0] && projectFolders[0].projects[0]) {
+        displayProject(projectFolders[0].projects[0], 0, 0);
+    } else {
+        // Clear the main area
+        document.querySelector("main").innerHTML = "<h1>No projects available</h1>";
+    }
+    // displayProject(projectFolders[0].projects[0], 0, 0);
 }
 
 export { addProject, editProject, selectProject, removeProject };
