@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+<script defer src="main.js"></script></head>
+<body>
+    <header>
+        <img src="193a78055a234b21eeb7.svg" alt="to do list icon" class="logo">
+        <p>Todo App</p>
+    </header>
+    <aside class="sidebar">
+        <div class="links">
+            <ul class="filters">
+                <li class="today-link">Today</li>
+                <li class="upcoming-link">Upcoming</li>
+                <li class="priority-link">Priority</li>
+            </ul>
+            <ul class="project-folder-list">
+
+            </ul>
+        </div>
+        <div class="add-project">
+            <input type="text" id="pf-name" placeholder="New Project folder">
+            <img class="pf-button" src="cc065ca2e796ef056c2f.svg" alt="add icon">
+        </div>
+    </aside>
+    <main>
+
+    </main>
+    <section class="modal-box project-modal">
+        <div class="modal">
+            <h1>Add a Project</h1>
+            <input type="text" id="p-name" placeholder="Project name">
+            <textarea name="p-desc" id="p-desc" cols="30" rows="10" placeholder="Project Description"></textarea>
+            <div class="buttons">
+                <button class="cp-button">Cancel</button>
+                <button class="p-button">Add project</button>
+            </div>
+        </div>
+    </section>
+    <section class="modal-box todo-modal">
+        <div class="modal">
+            <h1>Add a Task</h1>
+            <div class="task">
+                <input type="text" id="task-name" placeholder="Task name">
+                <textarea id="task-desc" placeholder="Task description"></textarea>
+            </div>
+            <div class="props">
+                <div class="date">
+                    <label for="due-date">Due Date</label>
+                    <input type="date" id="due-date" placeholder="Due Date">    
+                </div>
+                <div class="priority">
+                    <label for="">Priority</label>
+                    <label class="toggler-wrapper style-1">
+                        <input type="checkbox" id="priority">
+                        <div class="toggler-slider">
+                            <div class="toggler-knob"></div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="ctd-button">Cancel</button>
+                <button class="td-button">Add Task</button>
+        </div>
+    </section>
+</body>
+</html>
