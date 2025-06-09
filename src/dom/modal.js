@@ -13,7 +13,7 @@ function displayProjectModal(e) {
     const projectDescription = document.querySelector("#p-desc");
     projectName.value = "";
     projectDescription.value = "";
-    const index = e.target.dataset.buttonIndex;
+    const index = e.target.dataset.pfIndex;
     modalButton.setAttribute("data-pf-index", index);
     modalButton.addEventListener("click", addProject);
     modal.classList.add("show");
