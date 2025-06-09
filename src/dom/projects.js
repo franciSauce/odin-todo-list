@@ -101,6 +101,7 @@ function displayProject(project,pfIndex, pIndex) {
 
 function displayTodos(todos, todoList, pfIndex, pIndex) {
     const sortedTodos = sortTodosByChecked(todos);
+    todoList.innerHTML = ""; // Clear existing todos
     sortedTodos.forEach((todo, tdIndex) => {
         const todoBox = document.createElement("li");
         const leftBox = document.createElement("div");
@@ -151,8 +152,9 @@ function displayTodos(todos, todoList, pfIndex, pIndex) {
         rightBox.appendChild(deleteButton);
         todoBox.appendChild(leftBox);
         todoBox.appendChild(rightBox);
-        todoBox.classList.add("todo-box");      
-    })
+        todoBox.classList.add("todo-box");
+        todoList.appendChild(todoBox);      
+    });
 }
 
 export { displayFolders, displayProject };
