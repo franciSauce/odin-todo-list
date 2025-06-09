@@ -5,12 +5,14 @@ import { removeTodoModal} from "../dom/modal";
 
 function addTodo(e) {
     const taskName = document.querySelector('#task-name');
+    const taskDesc = document.querySelector('#task-desc');
     const dueDate = document.querySelector('#due-date');
     const priority = document.querySelector('#priority');
     const task = taskName.value;
+    const description = taskDesc.value;
     const date = dueDate.value;
-    if (!task || !date) return;
-    const newTodo = Todo(task, date);
+    if (!task || !description|| !date) return;
+    const newTodo = Todo(task, description, date);
     if (priority.checked) newTodo.priority = true;
     else newTodo.priority = false;
     const pfIndex = e.target.dataset.pfIndex;
@@ -24,10 +26,12 @@ function addTodo(e) {
 function editTodo(e) {
     const taskName = document.querySelector("#task-name");
     const dueDate = document.querySelector("#due-date");
+    const taskDesc = document.querySelector("#task-desc");
     const priority = document.querySelector("#priority");
     const task = taskName.value;
+    const description = taskDesc.value;
     const date = dueDate.value;
-    const editedTodo = Todo(task, date);
+    const editedTodo = Todo(task, description, date);
     if (!task || !date) {
         alert("Please fill in all fields");
         return;
